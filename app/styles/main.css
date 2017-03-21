@@ -1,0 +1,73 @@
+* {
+  font-weight: 100;
+  color: #fff;
+}
+b {
+  font-weight: 500;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  min-height: 200px;
+  background: #4285f4;
+}
+.headline {
+  font-weight: 100;
+  padding: 10px;
+  margin: 0;
+}
+.headline .coords {
+  max-width: 60vw;
+  font-size: 10px;
+  margin: 0;
+  font-weight: 300;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.weather {
+  padding: 0;
+  text-align: center;
+  margin: 10px auto;
+}
+.weather .temperature {
+  font-size: 80px;
+  vertical-align: top;
+}
+.weather .unit {
+  font-size: 43px;
+  vertical-align: top;
+}
+.loading {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.5);
+  height: 100vh;
+  padding: 35vh 0;
+  font-weight: 400;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+.refresh-location {
+  font-weight: 300;
+  font-size: 10px;
+}
+.unit-label {
+  cursor: pointer;
+  border: 1px solid #fff;
+  padding: 2px;
+  font-size: 12px;
+  margin: 0;
+}
+.unit-input input:checked + label.unit-label {
+  background: #fff;
+  color: #4285f4;
+  font-weight: 400;
+}
+.hide {
+  display: none;
+}
