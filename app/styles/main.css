@@ -63,6 +63,10 @@ body {
   font-size: 12px;
   margin: 0;
 }
+.unit-input {
+  text-align: right;
+  padding: 10px;
+}
 .unit-input input:checked + label.unit-label {
   background: #fff;
   color: #4285f4;

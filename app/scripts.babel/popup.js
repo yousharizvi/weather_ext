@@ -56,7 +56,7 @@ function fetchWeather(location) {
 function updateValues(data) {
   let unit = $('[name="unit"]:checked').val();
   if (!data) return
-  $('.weather .condition').text(data.weather[0].main);
+  $('.weather .condition').html(`<b>${data.weather[0].main}:</b> ${data.weather[0].description}`);
   $('.weather .temperature').text(convert(data.main.temp, unit));
   $('.weather .unit').text(`°${unit}`);
   $('.weather .min').html(`<b>Min:</b> ${convert(data.main.temp_min, unit)}°${unit}`);
