@@ -10,7 +10,7 @@ $(function () {
     localStorage.removeItem('coords');
     getLocation();
   })
-  $('[name="unit"]').change(function() {
+  $('[name="unit"]').change(function () {
     localStorage.setItem('unit', $(this).val());
     updateValues(data);
   })
@@ -55,12 +55,13 @@ function fetchWeather(location) {
 
 function updateValues(data) {
   let unit = $('[name="unit"]:checked').val();
-  if (!data) return
+  if (!data) return;
+  let unitLabels = { K: 'K', C: '°C', F: '°F' };
   $('.weather .condition').html(`<b>${data.weather[0].main}:</b> ${data.weather[0].description}`);
   $('.weather .temperature').text(convert(data.main.temp, unit));
-  $('.weather .unit').text(`°${unit}`);
-  $('.weather .min').html(`<b>Min:</b> ${convert(data.main.temp_min, unit)}°${unit}`);
-  $('.weather .max').html(`<b>Max:</b> ${convert(data.main.temp_max, unit)}°${unit}`);
+  $('.weather .unit').text(`${unitLabels[unit]}`);
+  $('.weather .min').html(`<b>Min:</b> ${convert(data.main.temp_min, unit)}${unitLabels[unit]}`);
+  $('.weather .max').html(`<b>Max:</b> ${convert(data.main.temp_max, unit)}${unitLabels[unit]}`);
   $('.weather .pressure').html(`<b>Pressure:</b> ${data.main.pressure}`);
   $('.weather .humidity').html(`<b>Humidity:</b> ${data.main.humidity}`);
 }
@@ -68,10 +69,10 @@ function updateValues(data) {
 function convert(value, unit) {
   switch (unit) {
     case 'C':
-      return value - 273.15
+      return (value - 273.15).toFixed(1)
     case 'F':
-      return ((value - 273.15) * 9/5) + 32
+      return (((value - 273.15) * 9 / 5) + 32).toFixed(1)
     case 'K':
-      return value
+      return (value).toFixed(1)
   }
 }
