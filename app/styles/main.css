@@ -39,7 +39,7 @@ body {
   vertical-align: top;
 }
 .weather .unit {
-  font-size: 43px;
+  font-size: 80px;
   vertical-align: top;
 }
 .loading {
@@ -59,9 +59,11 @@ body {
 .unit-label {
   cursor: pointer;
   border: 1px solid #fff;
-  padding: 2px;
+  padding: 2px 5px;
   font-size: 12px;
   margin: 0;
+  text-align: center;
+  width: 50px;
 }
 .unit-input {
   text-align: right;

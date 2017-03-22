@@ -57,7 +57,7 @@ function updateValues(data) {
   let unit = $('[name="unit"]:checked').val();
   if (!data) return;
   let unitLabels = { K: 'K', C: '°C', F: '°F' };
-  $('.weather .condition').html(`<b>${data.weather[0].main}:</b> ${data.weather[0].description}`);
+  $('.weather .condition').html(`<b>${data.weather[0].main} - </b> ${data.weather[0].description}`);
   $('.weather .temperature').text(convert(data.main.temp, unit));
   $('.weather .unit').text(`${unitLabels[unit]}`);
   $('.weather .min').html(`<b>Min:</b> ${convert(data.main.temp_min, unit)}${unitLabels[unit]}`);
